@@ -43,6 +43,15 @@ tr:nth-child(even) {
     background-color: #f2f2f2
 }
 
-thead th.active {
+thead th label.active {
     text-decoration: underline;
+}
+
+.filter {
+    width: 80%;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
 }

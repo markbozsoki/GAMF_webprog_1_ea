@@ -1,19 +1,18 @@
-const data_table = document.getElementById("dataTable"); // get dataTable from DOM
-const table_headings = document.querySelectorAll("thead th"); // get all headings of dataTable from DOM
-const table_rows = document.querySelectorAll("tbody tr"); // get all rows of dataTable from DOM
+const table_header_labels = document.querySelectorAll("thead th label");
+const table_rows = document.querySelectorAll("tbody tr");
 
-table_headings.forEach((heading, index) => {
+table_header_labels.forEach((label, index) => {
     let sort_asc = true;
-    heading.onclick = () => {
+    label.onclick = () => {
         // setting the clicked column to active to change its style
-        table_headings.forEach(heading => heading.classList.remove("active"));
-        heading.classList.add("active");
+        table_header_labels.forEach(label => label.classList.remove("active"));
+        label.classList.add("active");
 
         // marking the column as ascending
-        heading.classList.toggle("asc", sort_asc);
-        sort_asc = heading.classList.contains("asc") ? false : true;
+        label.classList.toggle("asc", sort_asc);
+        sort_asc = label.classList.contains("asc") ? false : true;
 
-        sortTable(index, sort_asc)
+        sortTable(index, sort_asc);
     }
 });
 

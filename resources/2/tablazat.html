@@ -39,22 +39,30 @@
   <table id="dataTable">
     <thead>
       <tr>
-        <th class="active">FullName <span>&UpArrowDownArrow;</span></th>
-        <th>Email <span>&UpArrowDownArrow;</span></th>
-        <th>GamerTag <span>&UpArrowDownArrow;</span></th>
-        <th>Points <span>&UpArrowDownArrow;</span></th>
+        <th id="FullName"><label class="active">Full Name</label> <span>&UpArrowDownArrow;</span><br>
+          <input type="search" class="filter" id="FullNameFilter" placeholder="Filter Full Names">
+        </th>
+        <th id="Email"><label>Email</label> <span>&UpArrowDownArrow;</span><br>
+          <input type="search" class="filter" id="EmailFilter" placeholder="Filter Emails">
+        </th>
+        <th id="GamerTag"><label>Gamer Tag</label> <span>&UpArrowDownArrow;</span><br>
+          <input type="search" class="filter" id="GamerTagFilter" placeholder="Filter Gamer Tags">
+        </th>
+        <th id="Points"><label>Points</label> <span>&UpArrowDownArrow;</span><br>
+          <input type="search" class="filter" id="PointsFilter" placeholder="Filter Points">
+        </th>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <td>Lee Sang-hyeok</td>
+        <td>B Lee Sang-hyeok</td>
         <td>lee.shang@gmail.com</td>
         <td>@Faker</td>
         <td>12000</td>
       </tr>
       <tr>
-        <td>Johan Sundstein</td>
+        <td>A Johan Sundstein</td>
         <td>stndsteing@icloud.com</td>
         <td>@N0tail</td>
         <td>11000</td>
@@ -62,7 +70,8 @@
     </tbody>
   </table>
 
-  <script src="script.js"></script>
+  <script defer src="order_table.js"></script>
+  <script defer src="filter_table.js"></script>
 </body>
 
 </html>
