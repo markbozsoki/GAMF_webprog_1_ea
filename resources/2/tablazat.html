@@ -6,6 +6,23 @@
     <body>
         <header>
           <style>
+
+            .data-input-form {
+              border-style: solid;
+              padding: 10px;
+              margin: auto;
+              width: 50%;
+            }
+            input[type=text], input[type=number] {
+              width: 100%;
+              padding: 8px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+
             table {
             border-spacing: 0;
             width: 95%;
@@ -21,12 +38,29 @@
             }
             </style>
         </header>
-        <form>
-          <label>FullName</label><input type="text"><br>
-          <label>Email</label><input type="text"><br>
-          <label>GamerTag</label><input type="text"><br>
-          <label>Points</label><input type="text"><br>
-        </form>
+        <div id="data-input-form">
+          <form>
+            <div>
+            <label>FullName</label>
+            <input type="text">
+            </div>
+            <div>
+            <label>Email</label>
+            <input type="text">
+            </div>
+            <div>
+            <label>GamerTag</label>
+            <input type="text">
+            </div>
+            <div>
+            <label>Points</label>
+            <input type="text">
+            </div>
+          </form>
+        </div>
+        <br>
+
+        <hr>
 
         <table>
           <tr>
