@@ -1,4 +1,4 @@
-.data-input-form {
+.dataInputForm {
     border-style: solid;
     padding: 10px;
     margin: auto;
@@ -41,4 +41,8 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2
+}
+
+thead th.active {
+    text-decoration: underline;
 }

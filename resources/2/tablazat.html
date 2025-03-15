@@ -9,7 +9,7 @@
   <header>
     <link rel="stylesheet" href="style.css">
   </header>
-  <div id="data-input-form">
+  <div id="dataInputForm">
     <form>
       <div>
         <label>FullName</label>
@@ -36,27 +36,33 @@
 
   <hr>
 
-  <table>
-    <tr>
-      <th>FullName</th>
-      <th>Email</th>
-      <th>GamerTag</th>
-      <th>Points</th>
-    </tr>
-    <tr>
-      <td>Lee Sang-hyeok</td>
-      <td>lee.shang@gmail.com</td>
-      <td>@Faker</td>
-      <td>12000</td>
-    </tr>
-    <tr>
-      <td>Lee Sang-hyeok</td>
-      <td>lee.shang@gmail.com</td>
-      <td>@Faker</td>
-      <td>12000</td>
-    </tr>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th class="active">FullName <span>&UpArrowDownArrow;</span></th>
+        <th>Email <span>&UpArrowDownArrow;</span></th>
+        <th>GamerTag <span>&UpArrowDownArrow;</span></th>
+        <th>Points <span>&UpArrowDownArrow;</span></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Lee Sang-hyeok</td>
+        <td>lee.shang@gmail.com</td>
+        <td>@Faker</td>
+        <td>12000</td>
+      </tr>
+      <tr>
+        <td>Johan Sundstein</td>
+        <td>stndsteing@icloud.com</td>
+        <td>@N0tail</td>
+        <td>11000</td>
+      </tr>
+    </tbody>
   </table>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
