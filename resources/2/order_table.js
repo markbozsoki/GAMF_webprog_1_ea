@@ -1,5 +1,4 @@
 const table_header_labels = document.querySelectorAll("thead th label");
-const table_rows = document.querySelectorAll("tbody tr");
 
 table_header_labels.forEach((label, index) => {
     let sort_asc = true;
@@ -17,6 +16,7 @@ table_header_labels.forEach((label, index) => {
 });
 
 function sortTable(columnIndex, sort_asc) {
+    let table_rows = document.querySelectorAll("tbody tr")
     let array_rows = [...table_rows] // convert to array
     array_rows.sort((a, b) => {
         let first_row = a.querySelectorAll("td")[columnIndex].textContent.toLowerCase();
