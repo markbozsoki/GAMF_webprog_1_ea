@@ -59,8 +59,6 @@ thead th label.active {
     text-decoration: underline;
 }
 
-
 tbody tr.hide {
-    opacity: 0;
-    transform: translateX(100%);
+    display: none;
 }

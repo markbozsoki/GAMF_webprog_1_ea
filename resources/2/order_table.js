@@ -1,4 +1,4 @@
-const table_header_labels = document.querySelectorAll("thead th label");
+let table_header_labels = document.querySelectorAll("thead th label");
 
 table_header_labels.forEach((label, index) => {
     let sort_asc = true;
