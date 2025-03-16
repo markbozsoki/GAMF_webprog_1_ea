@@ -3,9 +3,9 @@ let table_header_labels = document.querySelectorAll("thead th label");
 table_header_labels.forEach((label, index) => {
     let sort_asc = true;
     label.onclick = () => {
-        // setting the clicked column to active to change its style
-        table_header_labels.forEach(label => label.classList.remove("active"));
-        label.classList.add("active");
+        // setting the clicked column to selected to change its style
+        table_header_labels.forEach(label => label.classList.remove("selected"));
+        label.classList.add("selected");
 
         // marking the column as ascending
         label.classList.toggle("asc", sort_asc);

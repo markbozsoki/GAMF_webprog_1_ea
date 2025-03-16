@@ -55,7 +55,7 @@ tr:nth-child(even) {
     background-color: #f2f2f2
 }
 
-thead th label.active {
+thead th label.selected {
     text-decoration: underline;
 }
 
