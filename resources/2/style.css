@@ -5,6 +5,15 @@
     width: 50%;
 }
 
+label.formValidationError {
+    color: red;
+    margin-left: 5px;
+}
+
+form div label.hide {
+    display: none;
+}
+
 input[type=text],
 input[type=number] {
     width: 100%;
