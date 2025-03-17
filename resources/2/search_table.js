@@ -1,9 +1,9 @@
-let searchBar = document.getElementById("searchBar");
+let search_bar = document.getElementById("searchBar");
 
-searchBar.addEventListener("input", filterTable);
+search_bar.addEventListener("input", filterTable);
 
 function filterTable(){
-    let search_expressin = searchBar.value;
+    let search_expressin = search_bar.value;
     let table_rows = document.querySelectorAll("tbody tr");
 
     table_rows.forEach((row) => {

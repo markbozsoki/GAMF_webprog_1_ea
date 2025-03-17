@@ -24,7 +24,7 @@ function getFormData() {
     let form_data = {}
     form_inputs.forEach((input) => {
         if (input.type != "submit") { // filter the submit input
-            let key = input.id.substring(0, input.id.length - "Filter".length + 1) // remove "Filter" taging from the end of the id
+            let key = input.id.substring(0, input.id.length - "Input".length) // remove "Input" taging from the end of the id
             form_data[key] = input.value;
         }
     });
@@ -49,7 +49,7 @@ function validateFormData(form_data) {
                     break;
                 }
                 if (value.length >= 120) {
-                    markFormInputInvalid(validation_label_id, "Email is too long!")
+                    markFormInputInvalid(validation_label_id, "Email is too long! (max 120 charakter)")
                     is_valid = false;
                     break;
                 }
@@ -68,7 +68,7 @@ function validateFormData(form_data) {
                     break;
                 }
                 if (value.length >= 100) {
-                    markFormInputInvalid(validation_label_id, "Email is too long!")
+                    markFormInputInvalid(validation_label_id, "Email is too long! (max 100 charakter)")
                     is_valid = false;
                     break;
                 }
@@ -85,6 +85,11 @@ function validateFormData(form_data) {
                     is_valid = false;
                     break;
                 }
+                if (value[0] != "@") {
+                    markFormInputInvalid(validation_label_id, "GamerTag must begin with @!")
+                    is_valid = false;
+                    break;
+                }
                 gamer_tag_validator = new RegExp("^@[a-zA-Z0-9\.\-]+$"); // requires @ at the start, must be continues text
                 if (gamer_tag_validator.exec(value) == null) {
                     markFormInputInvalid(validation_label_id, "Use only supported charackters!")
@@ -92,7 +97,7 @@ function validateFormData(form_data) {
                     break;
                 }
                 if (value.length >= 16) {
-                    markFormInputInvalid(validation_label_id, "GamerTag is too long!")
+                    markFormInputInvalid(validation_label_id, "Nickname is too long! (max 15 charakter after the @)")
                     is_valid = false;
                     break;
                 }
@@ -105,7 +110,7 @@ function validateFormData(form_data) {
                     break;
                 }
                 if (value.length >= 32) {
-                    markFormInputInvalid(validation_label_id, "Number is too long!")
+                    markFormInputInvalid(validation_label_id, "Number is too long! (max 32 charakter)")
                     is_valid = false;
                     break;
                 }
@@ -132,7 +137,7 @@ function markFormInputInvalid(validation_label_id, error_message) {
         error_message = default_validation_error_message;
     }
     let validation_error_label = document.getElementById(validation_label_id);
-    validation_error_label.innerHTML = error_message
+    validation_error_label.innerHTML = error_message;
     validation_error_label.classList.remove("hide");
 }
 
@@ -142,7 +147,7 @@ function insertRowToTable(form_data) {
         form_data.Email,
         form_data.GamerTag,
         form_data.Points,
-    ]
+    ];
     insertRowToDataTable(row_data);
 }
 
