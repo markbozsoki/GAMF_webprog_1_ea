@@ -38,16 +38,16 @@ function clearEditButtonsClickedStyle() {
 }
 
 function deleteRow(delete_button) {
+    let table_data = delete_button.parentElement;
+    let table_row = table_data.parentElement;
+    
+    if (table_row == table_row_to_edit) {
+        // disallow user to delete a row that is currently edited
+        alert("You cannot delete a currently edited row!");
+        return;
+    }
+
     if (confirm("Are you sure about deleting this row?")) {
-        let table_data = delete_button.parentElement;
-        let table_row = table_data.parentElement;
-
-        if (table_row == table_row_to_edit) {
-            // disallow user to delete a row that is currently edited
-            alert("You cannot delete a currently edited row!");
-            return;
-        }
-
         let table = document.querySelectorAll("tbody")[0];
         table.deleteRow(table_row.rowIndex - 1); // rowIndex starts from 1
     }
