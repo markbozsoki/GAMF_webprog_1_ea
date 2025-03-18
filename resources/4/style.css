@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+    width: 50%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+th {
+    background-color: rgba(102, 205, 171, 0.306);
+}
+canvas {
+    max-width: 50%;              
+    height: 200px;
+}
