@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Web-programozás-1 Előadás Házi feladat</title> 
+    <link type="text/css" rel="stylesheet" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script defer src="chartjs.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        th {
+            background-color: rgba(102, 205, 171, 0.306);
+        }
+        canvas {
+            max-width: 50%;              
+            height: 200px;
+        }
+    </style>
+</head> 
+<body> 
+    <header> 
+        <h1 class="header">Web-programozás-1 Előadás Házi feladat</h1> 
+    </header> 
+    <nav> 
+        <ul> 
+            <li><a href="index.html" >Főoldal</a></li> 
+            <li><a href="tablazat.html">Táblázat</a></li> 
+            <li><a href="html5.html">HTML5</a></li>
+            <li><a href="chartjs.html"class="active">ChartJS</a></li> 
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+
+
+        </ul> 
+    </nav> 
+    <aside> 
+
+ 
+            <h1>ChartJS</h1> 
+    </aside> 
+    <section> 
+        <h1>ChartJS</h1> 
+        <h2>Válasszon egy sort a táblázatból!</h2>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Érték 1</th>
+                <th>Érték 2</th>
+                <th>Érték 3</th>
+                <th>Érték 4</th>
+                <th>Érték 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td></tr>
+            <tr><td>2</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+            <tr><td>3</td><td>8</td><td>3</td><td>11</td><td>10</td><td>9</td></tr>
+            <tr><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+            <tr><td>5</td><td>5</td><td>-5</td><td>10</td><td>-10</td><td>0</td></tr>
+        </tbody>
+    </table>
+
+    <canvas id="chartCanvas"></canvas>
+
+   
+    </section> 
+    <footer>Óré Szabina Vivien VE22CS & Bózsóki Márk I6SUE5</footer> 
+</body> 
+</html> 
+ 
