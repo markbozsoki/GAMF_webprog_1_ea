@@ -1,5 +1,5 @@
 let DEFAULT_VALIDATION_ERROR_MESSAGE = "Invalid input";
-let REQUIRED_FIELD_INPUT_ERROR_MESSAGE= "Field is required!";
+let REQUIRED_FIELD_INPUT_ERROR_MESSAGE = "Field is required!";
 
 let form = document.getElementById("dataInputForm");
 let validation_error_labels = document.getElementsByClassName("formValidationError");
@@ -9,16 +9,29 @@ form.addEventListener("submit", updateTableWithFormData);
 function updateTableWithFormData() {
     [...validation_error_labels].forEach((label) => {
         label.innerHTML = DEFAULT_VALIDATION_ERROR_MESSAGE; // reset error message
-        if (!label.classList.contains("hide")){
+        if (!label.classList.contains("hide")) {
             label.classList.add("hide"); // reset visibillity
         }
     });  // hide all validation errors if any visible
 
     form_data = getFormData();
-    if (validateFormData(form_data)) {
-        insertRowToTable(form_data); // only insert if validation passes
-        resetForm(form_data); // required step because onsubmit="event.preventDefault();" included
+    if (!validateFormData(form_data)) {
+        return; // only proceed if validation passes on form inputs
     }
+
+    row_data_array = [
+        form_data.FullName,
+        form_data.Email,
+        form_data.GamerTag,
+        form_data.Points,
+    ];
+    if (table_row_to_edit != null) {
+        updateCurrentlyEditedDataTableRow(row_data_array)
+    } else {
+        insertRowToDataTable(row_data_array);
+    }
+
+    resetForm(form_data); // required step because onsubmit="event.preventDefault();" included
 }
 
 function getFormData() {
@@ -141,16 +154,6 @@ function markFormInputInvalid(validation_label_id, error_message) {
     let validation_error_label = document.getElementById(validation_label_id);
     validation_error_label.innerHTML = error_message;
     validation_error_label.classList.remove("hide");
-}
-
-function insertRowToTable(form_data) {
-    row_data = [
-        form_data.FullName,
-        form_data.Email,
-        form_data.GamerTag,
-        form_data.Points,
-    ];
-    insertRowToDataTable(row_data);
 }
 
 function resetForm(form_data) {

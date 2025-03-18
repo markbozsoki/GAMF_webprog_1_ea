@@ -82,3 +82,7 @@ tbody tr a {
     color: #0000ee;
     margin-right: 4px;
 }
+
+tbody tr a.clicked {
+    color: brown;
+}

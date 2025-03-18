@@ -9,27 +9,31 @@
   <header>
     <link rel="stylesheet" href="style.css">
   </header>
-    <form id="dataInputForm" onsubmit="event.preventDefault();">
-      <div>
-        <label>FullName</label><label id="FullNameValidationError" class="formValidationError hide">Validation Error</label>
-        <input type="text" id="FullNameInput">
-      </div>
-      <div>
-        <label>Email</label><label id="EmailValidationError" class="formValidationError hide">Validation Error</label>
-        <input type="text" id="EmailInput">
-      </div>
-      <div>
-        <label>GamerTag</label><label id="GamerTagValidationError" class="formValidationError hide">Validation Error</label>
-        <input type="text" id="GamerTagInput">
-      </div>
-      <div>
-        <label>Points</label><label id="PointsValidationError" class="formValidationError hide">Validation Error</label>
-        <input type="number" id="PointsInput" min="0" step="100">
-      </div>
-      <div>
-        <input type="submit" value="Submit">
-      </div>
-    </form>
+  <form id="dataInputForm" onsubmit="event.preventDefault();">
+    <div>
+      <label>FullName</label>
+      <label id="FullNameValidationError" class="formValidationError hide">Validation Error</label>
+      <input type="text" id="FullNameInput">
+    </div>
+    <div>
+      <label>Email</label>
+      <label id="EmailValidationError" class="formValidationError hide">Validation Error</label>
+      <input type="text" id="EmailInput">
+    </div>
+    <div>
+      <label>GamerTag</label>
+      <label id="GamerTagValidationError" class="formValidationError hide">Validation Error</label>
+      <input type="text" id="GamerTagInput">
+    </div>
+    <div>
+      <label>Points</label>
+      <label id="PointsValidationError" class="formValidationError hide">Validation Error</label>
+      <input type="number" id="PointsInput" min="0" step="100">
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
   <br>
 
   <hr>
@@ -70,8 +74,8 @@
   </table>
 
   <script src="load_table.js"></script>
-  <script src="input_table.js"></script>
   <script src="edit_table.js"></script>
+  <script src="input_table.js"></script>
   <script src="search_table.js"></script>
   <script src="order_table.js"></script>
 </body>
