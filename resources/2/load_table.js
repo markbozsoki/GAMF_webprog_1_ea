@@ -1,5 +1,5 @@
-const EDIT_ACTION_BUTTON_TEXT = "Edit";
-const DELETE_ACTION_BUTTON_TEXT = "Delete";
+const EDIT_ACTION_BUTTON_TEXT = "Módosítás";
+const DELETE_ACTION_BUTTON_TEXT = "Törlés";
 
 let data_table = document.getElementById("dataTable");
 data_table.onload = loadTableData();

@@ -11,22 +11,22 @@
   </header>
   <form id="dataInputForm" onsubmit="event.preventDefault();">
     <div>
-      <label>FullName</label>
+      <label>Teljes név</label>
       <label id="FullNameValidationError" class="formValidationError hide">Validation Error</label>
       <input type="text" id="FullNameInput">
     </div>
     <div>
-      <label>Email</label>
+      <label>Email cím</label>
       <label id="EmailValidationError" class="formValidationError hide">Validation Error</label>
       <input type="text" id="EmailInput">
     </div>
     <div>
-      <label>GamerTag</label>
+      <label>Becenév (Játékos azonosító)</label>
       <label id="GamerTagValidationError" class="formValidationError hide">Validation Error</label>
       <input type="text" id="GamerTagInput">
     </div>
     <div>
-      <label>Points</label>
+      <label>Játékos pontszáma (százas nagyságrendben)</label>
       <label id="PointsValidationError" class="formValidationError hide">Validation Error</label>
       <input type="number" id="PointsInput" min="0" step="100">
     </div>
@@ -37,21 +37,21 @@
   <br>
 
   <hr>
-  <input type="search" id="searchBar" placeholder="Search for anything...">
+  <input type="search" id="searchBar" placeholder="Írjon be egy keresett kifejezést...">
   <hr>
 
   <table id="dataTable">
     <thead>
       <tr>
-        <th><label>Full Name</label> <span>&UpArrowDownArrow;</span>
+        <th><label>Teljes név</label> <span>&UpArrowDownArrow;</span>
         </th>
-        <th><label>Email</label> <span>&UpArrowDownArrow;</span>
+        <th><label>Email cím</label> <span>&UpArrowDownArrow;</span>
         </th>
-        <th><label>Gamer Tag</label> <span>&UpArrowDownArrow;</span>
+        <th><label>Becenév</label> <span>&UpArrowDownArrow;</span>
         </th>
-        <th><label>Points</label> <span>&UpArrowDownArrow;</span>
+        <th><label>Pontszám</label> <span>&UpArrowDownArrow;</span>
         </th>
-        <th>Action</th>
+        <th>Sorműveletek</th>
       </tr>
     </thead>
 

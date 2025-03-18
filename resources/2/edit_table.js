@@ -43,11 +43,11 @@ function deleteRow(delete_button) {
     
     if (table_row == table_row_to_edit) {
         // disallow user to delete a row that is currently edited
-        alert("You cannot delete a currently edited row!");
+        alert("Nem törölhetsz módosítás alatt álló sort!");
         return;
     }
 
-    if (confirm("Are you sure about deleting this row?")) {
+    if (confirm("Biztosan törölni szeretnéd a táblázat " + table_row.rowIndex + ". sorát?")) {
         let table = document.querySelectorAll("tbody")[0];
         table.deleteRow(table_row.rowIndex - 1); // rowIndex starts from 1
     }
