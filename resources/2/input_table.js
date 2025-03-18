@@ -1,4 +1,6 @@
-let default_validation_error_message = "Invalid input"
+let DEFAULT_VALIDATION_ERROR_MESSAGE = "Invalid input";
+let REQUIRED_FIELD_INPUT_ERROR_MESSAGE= "Field is required!";
+
 let form = document.getElementById("dataInputForm");
 let validation_error_labels = document.getElementsByClassName("formValidationError");
 
@@ -6,7 +8,7 @@ form.addEventListener("submit", updateTableWithFormData);
 
 function updateTableWithFormData() {
     [...validation_error_labels].forEach((label) => {
-        label.innerHTML = default_validation_error_message; // reset error message
+        label.innerHTML = DEFAULT_VALIDATION_ERROR_MESSAGE; // reset error message
         if (!label.classList.contains("hide")){
             label.classList.add("hide"); // reset visibillity
         }
@@ -38,13 +40,13 @@ function validateFormData(form_data) {
         switch (key) {
             case "FullName":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, "Field is required!")
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
                     is_valid = false;
                     break;
                 }
                 full_name_validator = new RegExp("^[a-zA-Z-\.\ ]+$"); // allows letters, dots, dashes and whitespaces name format
                 if (full_name_validator.exec(value) == null) {
-                    markFormInputInvalid(validation_label_id, "Use only supported charackters!")
+                    markFormInputInvalid(validation_label_id, "Full name format is not supported!")
                     is_valid = false;
                     break;
                 }
@@ -57,13 +59,13 @@ function validateFormData(form_data) {
 
             case "Email":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, "Field is required!")
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
                     is_valid = false;
                     break;
                 }
                 email_validator = new RegExp("^([a-zA-Z\.\-]+)@([a-zA-Z0-9\-]+)((\.([a-zA-Z0-9]){2,3})+)$"); // requires valid email format
                 if (email_validator.exec(value) == null) {
-                    markFormInputInvalid(validation_label_id, "Format is not supported!")
+                    markFormInputInvalid(validation_label_id, "Email format is not supported!")
                     is_valid = false;
                     break;
                 }
@@ -76,7 +78,7 @@ function validateFormData(form_data) {
 
             case "GamerTag":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, "Field is required!")
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
                     is_valid = false;
                     break;
                 }
@@ -134,7 +136,7 @@ function validateFormData(form_data) {
 function markFormInputInvalid(validation_label_id, error_message) {
     // makes the validation error text visible
     if (error_message == null || error_message == "") {
-        error_message = default_validation_error_message;
+        error_message = DEFAULT_VALIDATION_ERROR_MESSAGE;
     }
     let validation_error_label = document.getElementById(validation_label_id);
     validation_error_label.innerHTML = error_message;
