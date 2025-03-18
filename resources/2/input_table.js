@@ -76,7 +76,7 @@ function validateFormData(form_data) {
                     is_valid = false;
                     break;
                 }
-                email_validator = new RegExp("^([a-zA-Z\.\-]+)@([a-zA-Z0-9\-]+)((\.([a-zA-Z0-9]){2,3})+)$"); // requires valid email format
+                email_validator = new RegExp("^([a-zA-Z0-9\.\-]+)@([a-zA-Z\-]+)((\.([a-zA-Z]){2,3})+)$"); // requires valid email format
                 if (email_validator.exec(value) == null) {
                     markFormInputInvalid(validation_label_id, "Az email cím formátuma nem megfelelő!")
                     is_valid = false;
