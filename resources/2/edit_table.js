@@ -33,6 +33,14 @@ function updateCurrentlyEditedDataTableRow(data_array) {
 }
 
 function clearEditButtonsClickedStyle() {
+    let validation_error_labels = [...document.getElementsByClassName("formValidationError")]
+    validation_error_labels.forEach((label) => {
+        label.innerHTML = DEFAULT_VALIDATION_ERROR_MESSAGE; // reset error message
+        if (!label.classList.contains("hide")) {
+            label.classList.add("hide"); // reset visibillity
+        }
+    });
+
     let row_edit_buttons = [...document.getElementsByClassName("rowEditButton")];
     row_edit_buttons.forEach(button => button.classList.remove("clicked"));
 }
@@ -40,7 +48,7 @@ function clearEditButtonsClickedStyle() {
 function deleteRow(delete_button) {
     let table_data = delete_button.parentElement;
     let table_row = table_data.parentElement;
-    
+
     if (table_row == table_row_to_edit) {
         // disallow user to delete a row that is currently edited
         alert("Nem törölhetsz módosítás alatt álló sort!");
