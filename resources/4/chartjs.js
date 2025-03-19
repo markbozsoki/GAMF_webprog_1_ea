@@ -3,7 +3,7 @@ const ctx = document.getElementById('chartCanvas').getContext('2d');
 let chart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Érték 1', 'Érték 2', 'Érték 3', 'Érték 4', 'Érték 5'],
+        labels: [...document.getElementsByClassName("tableHeaders")],
         datasets: [{
             label: 'Kiválasztott sor',
             data: [],
