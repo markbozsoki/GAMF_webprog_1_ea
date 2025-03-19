@@ -1,0 +1,100 @@
+article {
+    margin:  40px 40px 10px 40px;
+}
+article ul li {
+    padding: 4px;
+}
+
+form {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: auto; /* auto horizontal alingment */
+    margin-top: 30px;
+    width: 95%;
+}
+
+form div label.formValidationError {
+    color: red;
+    margin-left: 5px;
+}
+
+form div label.hide {
+    display: none;
+}
+
+input[type=text],
+input[type=number] {
+    box-sizing: border-box; /* allows us to include the padding and border in an element's total width and height */
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    width: 20%;
+    background-color: black;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=search] {
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+table {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border-spacing: 0px 5px; /* sets the spacing between cells horizontally and vertically */
+    width: 100%;
+    margin: auto; /* auto horizontal alingment */
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd
+}
+
+thead th label {
+    cursor: pointer;
+}
+
+thead th label.selected {
+    text-decoration: underline;
+}
+
+tbody tr.hide {
+    display: none;
+}
+
+tbody tr a {
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 4px;
+}
+
+tbody tr a.clicked {
+    color: brown;
+}
