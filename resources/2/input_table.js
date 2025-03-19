@@ -26,7 +26,7 @@ function updateTableWithFormData() {
         form_data.Points,
     ];
     if (table_row_to_edit != null) {
-        updateCurrentlyEditedDataTableRow(row_data_array)
+        updateCurrentlyEditedDataTableRow(row_data_array);
     } else {
         insertRowToDataTable(row_data_array);
     }
@@ -36,10 +36,10 @@ function updateTableWithFormData() {
 
 function getFormData() {
     let form_inputs = document.querySelectorAll("form div input");
-    let form_data = {}
+    let form_data = {};
     form_inputs.forEach((input) => {
         if (input.type != "submit") { // filter the submit input
-            let key = input.id.substring(0, input.id.length - "Input".length) // remove "Input" taging from the end of the id
+            let key = input.id.substring(0, input.id.length - "Input".length); // remove "Input" taging from the end of the id
             form_data[key] = input.value;
         }
     });
@@ -53,18 +53,18 @@ function validateFormData(form_data) {
         switch (key) {
             case "FullName":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE);
                     is_valid = false;
                     break;
                 }
                 full_name_validator = new RegExp("^[a-zA-Z-\.\ ]+$"); // allows letters, dots, dashes and whitespaces name format
                 if (full_name_validator.exec(value) == null) {
-                    markFormInputInvalid(validation_label_id, "Helytelen karakter a névben! (a-z, A-Z, -, .)")
+                    markFormInputInvalid(validation_label_id, "Helytelen karakter a névben! (a-z, A-Z, -, .)");
                     is_valid = false;
                     break;
                 }
                 if (value.length >= 120) {
-                    markFormInputInvalid(validation_label_id, "Túl hosszú név! (maximum 120 karakter)")
+                    markFormInputInvalid(validation_label_id, "Túl hosszú név! (maximum 120 karakter)");
                     is_valid = false;
                     break;
                 }
@@ -72,18 +72,18 @@ function validateFormData(form_data) {
 
             case "Email":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE);
                     is_valid = false;
                     break;
                 }
                 email_validator = new RegExp("^([a-zA-Z0-9\.\-]+)@([a-zA-Z\-]+)((\.([a-zA-Z]){2,3})+)$"); // requires valid email format
                 if (email_validator.exec(value) == null) {
-                    markFormInputInvalid(validation_label_id, "Az email cím formátuma nem megfelelő!")
+                    markFormInputInvalid(validation_label_id, "Az email cím formátuma nem megfelelő!");
                     is_valid = false;
                     break;
                 }
                 if (value.length >= 100) {
-                    markFormInputInvalid(validation_label_id, "Az email cím túl hosszú! (maximum 100 karakter)")
+                    markFormInputInvalid(validation_label_id, "Az email cím túl hosszú! (maximum 100 karakter)");
                     is_valid = false;
                     break;
                 }
@@ -91,28 +91,28 @@ function validateFormData(form_data) {
 
             case "GamerTag":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE);
                     is_valid = false;
                     break;
                 }
                 if (value == "@") {
-                    markFormInputInvalid(validation_label_id, "Addj meg egy becenevet!")
+                    markFormInputInvalid(validation_label_id, "Addj meg egy becenevet!");
                     is_valid = false;
                     break;
                 }
                 if (value[0] != "@") {
-                    markFormInputInvalid(validation_label_id, "A becenév @ karakterrel kell hogy kezdődjön!")
+                    markFormInputInvalid(validation_label_id, "A becenév @ karakterrel kell hogy kezdődjön!");
                     is_valid = false;
                     break;
                 }
                 gamer_tag_validator = new RegExp("^@[a-zA-Z0-9\.\-]+$"); // requires @ at the start, must be continues text
                 if (gamer_tag_validator.exec(value) == null) {
-                    markFormInputInvalid(validation_label_id, "A becenévben nem megfelelő karakter van! (a-z, 0-9, ., -)")
+                    markFormInputInvalid(validation_label_id, "A becenévben nem megfelelő karakter van! (a-z, 0-9, ., -)");
                     is_valid = false;
                     break;
                 }
                 if (value.length >= 16) {
-                    markFormInputInvalid(validation_label_id, "A becenév túl hosszú! (maximum 15 karakter az @ után)")
+                    markFormInputInvalid(validation_label_id, "A becenév túl hosszú! (maximum 15 karakter az @ után)");
                     is_valid = false;
                     break;
                 }
@@ -120,19 +120,19 @@ function validateFormData(form_data) {
 
             case "Points":
                 if (value == "") {
-                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE)
+                    markFormInputInvalid(validation_label_id, REQUIRED_FIELD_INPUT_ERROR_MESSAGE);
                     is_valid = false;
                     break;
                 }
                 if (value.length >= 32) {
-                    markFormInputInvalid(validation_label_id, "A megadott szám túl hosszú! (maximum 32 karakter)")
+                    markFormInputInvalid(validation_label_id, "A megadott szám túl hosszú! (maximum 32 karakter)");
                     is_valid = false;
                     break;
                 }
                 points_validator = new RegExp("^[0-9]+$"); // allows only positive integer numbers and zero
                 x = points_validator.exec(value)
                 if (points_validator.exec(value) == null) {
-                    markFormInputInvalid(validation_label_id, "Kizárólag pozitív egész számok engedélyezettek!")
+                    markFormInputInvalid(validation_label_id, "Kizárólag pozitív egész számok engedélyezettek!");
                     is_valid = false;
                     break;
                 }

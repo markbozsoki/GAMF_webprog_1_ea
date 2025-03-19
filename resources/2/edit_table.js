@@ -16,7 +16,7 @@ function loadRowDataToForm(table_row) {
     let form_inputs = document.querySelectorAll("form div input");
 
     for (let i = 0; i < table_headers.length - 1; i++) {
-        let destination_input = form_inputs[i]
+        let destination_input = form_inputs[i];
         let cell = table_row.cells[i];
         destination_input.value = cell.innerText;
     }
