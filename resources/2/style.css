@@ -9,7 +9,7 @@ form {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px;
-    margin: auto;
+    margin: auto; /* auto horizontal alingment */
     margin-top: 30px;
     width: 95%;
 }
@@ -25,13 +25,12 @@ form div label.hide {
 
 input[type=text],
 input[type=number] {
+    box-sizing: border-box; /* allows us to include the padding and border in an element's total width and height */
     width: 100%;
     padding: 8px 20px;
-    margin: 8px 0;
-    display: inline-block;
+    margin: 8px 0px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
 input[type=submit] {
@@ -59,9 +58,9 @@ input[type=search] {
 table {
     border: 1px solid #ddd;
     border-radius: 4px;
-    border-spacing: 0;
+    border-spacing: 0px 5px; /* sets the spacing between cells horizontally and vertically */
     width: 100%;
-    margin: auto;
+    margin: auto; /* auto horizontal alingment */
 }
 
 th,
