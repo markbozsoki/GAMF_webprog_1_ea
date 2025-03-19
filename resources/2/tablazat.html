@@ -3,60 +3,102 @@
 
 <head>
   <meta charset="utf-8" />
+  <title>Web-programozás-1 Előadás Házi feladat</title>
+  <link type="text/css" rel="stylesheet" href="../main.css">
+  <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <link rel="stylesheet" href="style.css">
+    <h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
   </header>
-  <form id="dataInputForm" onsubmit="event.preventDefault();">
-    <div>
-      <label>Teljes név</label>
-      <label id="FullNameValidationError" class="formValidationError hide">Validation Error</label>
-      <input type="text" id="FullNameInput">
-    </div>
-    <div>
-      <label>Email cím</label>
-      <label id="EmailValidationError" class="formValidationError hide">Validation Error</label>
-      <input type="text" id="EmailInput">
-    </div>
-    <div>
-      <label>Becenév (Játékos azonosító)</label>
-      <label id="GamerTagValidationError" class="formValidationError hide">Validation Error</label>
-      <input type="text" id="GamerTagInput">
-    </div>
-    <div>
-      <label>Játékos pontszáma (százas nagyságrendben)</label>
-      <label id="PointsValidationError" class="formValidationError hide">Validation Error</label>
-      <input type="number" id="PointsInput" min="0" step="100">
-    </div>
-    <div>
+
+  <nav>
+    <ul>
+      <li><a href="../../index.html">Főoldal</a></li>
+      <li><a href="tablazat.html" class="active">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chartjs.html">ChartJS</a></li>
+      <li><a href="ajax.html">AJAX</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <h1>CRUD táblázas</h1>
+    <hr>
+    <h2>A 2. feladat megvalósítása</h2>
+  </aside>
+
+  <section>
+    <article>
+      <h2>Leírás</h2>
+      <ul>
+        <li>Az űrlap minden mezőjének helyes kitöltésével felvehet új sorokat a táblázatba.</li>
+        <li>A táblázat összes eleme közti kereséshez kezdjen el egy kifejezést gépelni a keresőmezőbe!</li>
+        <li>
+          A táblázatot egy adott oszlop szerint növekvő vagy csökkenő sorrendbe rendezheti a táblázat fejlécének nevére
+          kattintva.
+        </li>
+        <li>Amennyiben törölni kíván egy adott sort, kattintson a sor bal szélén találáható "Törlés" gombra.</li>
+        <li>
+          Amennyiben módosítani kíván egy adott sort, kattintson a sor bal szélén található "Módosítás" gonbra.<br>
+          Ennek hatására az űrlapba betöltésre kerülnek a kiválasztott sor adatai.<br>
+          Amennyiben befejezte az adatok módosítást, küldje be az űrlapot!
+        </li>
+      </ul>
+    </article>
+
+    <hr>
+
+    <form id="dataInputForm" onsubmit="event.preventDefault();">
+      <div>
+        <label>Teljes név</label>
+        <label id="FullNameValidationError" class="formValidationError hide">Validation Error</label>
+        <input type="text" id="FullNameInput">
+      </div>
+      <div>
+        <label>Email cím</label>
+        <label id="EmailValidationError" class="formValidationError hide">Validation Error</label>
+        <input type="text" id="EmailInput">
+      </div>
+      <div>
+        <label>Becenév (Játékos azonosító)</label>
+        <label id="GamerTagValidationError" class="formValidationError hide">Validation Error</label>
+        <input type="text" id="GamerTagInput">
+      </div>
+      <div>
+        <label>Játékos pontszáma (százas nagyságrendben)</label>
+        <label id="PointsValidationError" class="formValidationError hide">Validation Error</label>
+        <input type="number" id="PointsInput" min="0" step="100">
+      </div>
+      <div>
       <input type="submit" value="Submit">
-    </div>
-  </form>
-  <br>
+      </div>
+    </form>
+    <br>
 
-  <hr>
-  <input type="search" id="searchBar" placeholder="Írjon be egy keresett kifejezést...">
-  <hr>
+    <hr>
+    <input type="search" id="searchBar" placeholder="Írjon be egy keresett kifejezést...">
+    <hr>
 
-  <table id="dataTable">
-    <thead>
-      <tr>
-        <th><label>Teljes név</label> <span>&UpArrowDownArrow;</span>
-        </th>
-        <th><label>Email cím</label> <span>&UpArrowDownArrow;</span>
-        </th>
-        <th><label>Becenév</label> <span>&UpArrowDownArrow;</span>
-        </th>
-        <th><label>Pontszám</label> <span>&UpArrowDownArrow;</span>
-        </th>
-        <th>Sorműveletek</th>
-      </tr>
-    </thead>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th><label>Teljes név</label> <span>&UpArrowDownArrow;</span>
+          </th>
+          <th><label>Email cím</label> <span>&UpArrowDownArrow;</span>
+          </th>
+          <th><label>Becenév</label> <span>&UpArrowDownArrow;</span>
+          </th>
+          <th><label>Pontszám</label> <span>&UpArrowDownArrow;</span>
+          </th>
+          <th>Sorműveletek</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <!-- static data for testing ordering and filtering
+      <tbody>
+        <!-- static data for testing ordering and filtering
       <tr>
         <td>Jesse Vainikka</td>
         <td>jesstheking@gaming.uk</td>
@@ -70,8 +112,11 @@
         <td>11100</td>
       </tr>
       -->
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>Óré Szabina Vivien VE22CS & Bózsóki Márk I6SUE5</footer>
 
   <script src="load_table.js"></script>
   <script src="edit_table.js"></script>
