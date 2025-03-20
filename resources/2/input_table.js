@@ -130,7 +130,6 @@ function validateFormData(form_data) {
                     break;
                 }
                 points_validator = new RegExp("^[0-9]+$"); // allows only positive integer numbers and zero
-                x = points_validator.exec(value)
                 if (points_validator.exec(value) == null) {
                     markFormInputInvalid(validation_label_id, "Kizárólag pozitív egész számok engedélyezettek!");
                     is_valid = false;
