@@ -51,6 +51,14 @@ section {
     padding: 15px;
 }
 
+section article {
+    margin:  40px 40px 10px 40px;
+}
+
+section article ul li {
+    padding: 4px;
+}
+
 nav ul {
     float: left;
     width: 100%;
