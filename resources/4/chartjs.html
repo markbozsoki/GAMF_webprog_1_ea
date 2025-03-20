@@ -1,71 +1,124 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <meta charset="utf-8"> 
-    <title>Web-programozás-1 Előadás Házi feladat</title> 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Web-programozás-1 Előadás Házi feladat</title>
     <link type="text/css" rel="stylesheet" href="../main.css">
     <link type="text/css" rel="stylesheet" href="style.css">
-</head> 
+</head>
+
 <body>
     <div id="pageContainer">
-        <div id="contentWrap"> 
-    <header> 
-        <h1 class="header">Web-programozás-1 Előadás Házi feladat</h1> 
-    </header> 
-    <nav> 
-        <ul> 
-            <li><a href="../../index.html">Főoldal</a></li>
-            <li><a href="../2/tablazat.html">Táblázat</a></li>
-            <li><a href="../3/html5.html">HTML5</a></li>
-            <li><a href="chartjs.html" class="active">ChartJS</a></li>
-            <li><a href="../5/ajax.html">AJAX</a></li>
-            <li><a href="../6/oojs.html">OOJS</a></li>
-        </ul> 
-    </nav> 
-    <aside> 
-            <h1>ChartJS</h1> 
-            <hr>
-            <h2>A 4. feladat megvalósítása</h2>
-    </aside> 
-    <section>
-        <article>
-            <h2>Leírás</h2>
-            <ul>
-              <li>A táblázat az 1-5. hét napjainak átlaghőmérsékletét tartalmazza Celsius fokban.</li>
-              <li>Válasszon egy tetszőleges cellát, és kattintson rá!</li>
-              <li>A táblázat alatti grafikon kimutatja az kiválasztott héthez tartozó napok átlaghőmérsékletének alakulását.</li>
-            </ul>
-          </article>
-    <table id="dataTable">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Hétfő</th>
-                <th>Kedd</th>
-                <th>Szerda</th>
-                <th>Csütörtök</th>
-                <th>Péntek</th>
-                <th>Szombat</th>
-                <th>Vasárnap</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1. hét</td><td>0</td><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td></tr>
-            <tr><td>2. hét</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
-            <tr><td>3. hét</td><td>7</td><td>6</td><td>8</td><td>3</td><td>11</td><td>10</td><td>9</td></tr>
-            <tr><td>4. hét</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
-            <tr><td>5. hét</td><td>0</td><td>10</td><td>5</td><td>-5</td><td>10</td><td>-10</td><td>0</td></tr>
-        </tbody>
-    </table>
+        <div id="contentWrap">
 
-    <canvas id="chartCanvas"></canvas>
-     
-    </section>
+            <header>
+                <h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Főoldal</a></li>
+                    <li><a href="../2/tablazat.html">Táblázat</a></li>
+                    <li><a href="../3/html5.html">HTML5</a></li>
+                    <li><a href="chartjs.html" class="active">ChartJS</a></li>
+                    <li><a href="../5/ajax.html">AJAX</a></li>
+                    <li><a href="../6/oojs.html">OOJS</a></li>
+                </ul>
+            </nav>
+
+            <aside>
+                <h1>ChartJS</h1>
+                <hr>
+                <h2>A 4. feladat megvalósítása</h2>
+            </aside>
+            
+            <section>
+                <article>
+                    <h2>Leírás</h2>
+                    <ul>
+                        <li>A táblázat az 1-5. hét napjainak átlaghőmérsékletét tartalmazza Celsius fokban.</li>
+                        <li>Válasszon egy tetszőleges cellát, és kattintson rá!</li>
+                        <li>A táblázat alatti grafikon kimutatja az kiválasztott héthez tartozó napok
+                            átlaghőmérsékletének alakulását.</li>
+                    </ul>
+                </article>
+                
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Hétfő</th>
+                            <th>Kedd</th>
+                            <th>Szerda</th>
+                            <th>Csütörtök</th>
+                            <th>Péntek</th>
+                            <th>Szombat</th>
+                            <th>Vasárnap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. hét</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>16</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>2. hét</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>3. hét</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>3</td>
+                            <td>11</td>
+                            <td>10</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>4. hét</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>5. hét</td>
+                            <td>0</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>-5</td>
+                            <td>10</td>
+                            <td>-10</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <canvas id="chartCanvas"></canvas>
+
+            </section>
+        </div>
+        <footer>Óré Szabina Vivien VE22CS & Bozsóki Márk I6SUE5</footer>
     </div>
-    <footer>Óré Szabina Vivien VE22CS & Bozsóki Márk I6SUE5</footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="chartjs.js"></script>
-</body> 
-</html> 
- 
+</body>
+
+</html>

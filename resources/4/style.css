@@ -5,17 +5,21 @@ table {
     margin-bottom: 20px;
     table-layout: fixed;
 }
-th, td {
+
+th,
+td {
     border: 1px solid black;
     padding: 10px;
     text-align: center;
     cursor: pointer;
-    width: 12,5%;
+    width: 12, 5%;
 }
+
 th {
     background-color: rgba(102, 205, 171, 0.306);
 }
+
 canvas {
-    max-width: 70%;              
+    max-width: 70%;
     height: 200px;
 }
