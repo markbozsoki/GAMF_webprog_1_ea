@@ -31,7 +31,9 @@
                 <h2>Az 5. feladat megvalósítása</h2>
             </aside>
             <section>
+                <article>
                 <h1>AJAX alkalmazás</h1>
+                </article>
                 <div class="container">
                     <div class="box">
                         <p id="code">code= VE22CSabc123</p>
@@ -40,39 +42,39 @@
                         <div id="readDiv"></div>
                     </div>
                     <div class="box">
-                        <h3>Height (Magasság) Statisztika</h3>
+                        <h3>Magasság Statisztika</h3>
                         <p>Összeg: <span id="sumHeight">-</span></p>
                         <p>Átlag: <span id="avgHeight">-</span></p>
                         <p>Legnagyobb: <span id="maxHeight">-</span></p>
                     </div>
                     <div class="box">
                         <h3>Új adat létrehozása</h3>
-                        Név (kötelező, max 30): <input id="name1" type="text"></input><br>
-                        Height (kötelező, max 30): <input id="height1" type="text"></input><br>
-                        Weight (kötelező, max 30): <input id="weight1" type="text"></input><br>
-                        <button type="submit" onclick="create();">Create</button><br>
+                        Név (kötelező, max 30):<br><input id="name1" type="text"></input><br>
+                        Magasság (cm) (kötelező, max 30): <input id="height1" type="text"></input><br>
+                        Súly (kg) (kötelező, max 30): <input id="weight1" type="text"></input><br>
+                        <button type="submit" onclick="create();">Létrehoz</button><br>
                         <div id="createDiv"></div>
                         <div id='createResult'></div>
                     </div>
                     <div class="box">
                         <h3>Update</h3>
                         ID (kötelező): <input id="idUpd" type="text"></input><br>
-                        <button type="submit" onclick="getDataForId();">getDataForId</button><br>
-                        Név (kötelező, max 30): <input id="name2" type="text"></input><br>
-                        Height (kötelező, max 30): <input id="height2" type="text"></input><br>
-                        Weight (kötelező, max 30): <input id="weight2" type="text"></input><br>
-                        <button type="submit" onclick="update();">Update</button><br>
+                        <button type="submit" onclick="getDataForId();">ID adat lekérése</button><br>
+                        Név (kötelező, max 30):<br><input id="name2" type="text"></input><br>
+                        Magasság (kötelező, max 30):<br><input id="height2" type="text"></input><br>
+                        Súly (kötelező, max 30):<br><input id="weight2" type="text"></input><br>
+                        <button type="submit" onclick="update();">Frissítés</button><br>
                         <div id='updateResult'></div>
                     </div>
                     <div class="box">
                         <h3>Adat törlése</h3>
                         ID (kötelező): <input id="idDel" type="text"></input><br>
-                        <button type="submit" onclick="deleteF();">Delete</button><br>
+                        <button type="submit" onclick="deleteF();">Törlés</button><br>
                         <p id="deleteResult"></p>
                     </div>
                 </div>
             </section>
-            <footer>Óré Szabina Vivien VE22CS & Bozsóki Márk I6SUE5</footer>
+            <footer><label>Óré Szabina Vivien VE22CS & Bozsóki Márk I6SUE5</label></footer>
         </div>
     </div>
     <script type="text/javascript" src="ajax.js"></script>
