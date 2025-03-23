@@ -25,9 +25,9 @@ async function read() {
     let max = 0;
 
     let str = "<h3>Adatok lekérése</h3>";
-    str += "<p>Number of records: " + data.rowCount + "</p>";
-    str += "<p>Last max " + data.maxNum + " records:</p>";
-    str += "<table><tr><th>id</th><th>name</th><th>height</th><th>weight</th><th>code</th></tr>";
+    str += "<p>Rekordok száma: " + data.rowCount + "</p>";
+    str += "<p>Utolsó max " + data.maxNum + " records:</p>";
+    str += "<table><tr><th>id</th><th>\tname</th><th>height</th><th>weight</th><th>code</th></tr>";
 
     for (let i = 0; i < list.length; i++) {
       let height = parseFloat(list[i].height);
