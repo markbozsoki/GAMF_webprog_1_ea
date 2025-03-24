@@ -1,0 +1,30 @@
+section button {
+    margin: 20px;
+}
+
+section div input {
+    margin-top: 1px;
+    margin-left: 20px;
+}
+
+#jumpToLocationBotton.disabled {
+    display: block !important;
+    pointer-events: none; 
+    color: #ddd;
+}
+
+#mapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: lightgray;
+    min-height: 500px;
+    margin-bottom: 30px;
+}
+
+#mapContainer label {
+    color: darkgray;
+    margin: 20px;
+    text-align: center;
+}

@@ -1,0 +1,56 @@
+section div {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin: 20px;
+}
+
+.svgControls {
+    display: grid;
+}
+
+.svgRangeInput {
+    max-height: 1em;
+}
+
+.svgRangeInput label {
+    width: 300px;
+}
+
+.svgRangeInput input {
+    width: 130px;
+}
+
+.svgButtonInput {
+    max-height: 1.3em;
+}
+
+.svgButtonInput label {
+    width: 300px;
+}
+
+.svgButtonInput button {
+    width: 100px;
+    margin-right: 17px;
+    margin-left: 17px;
+}
+
+section div svg {
+    border: 1px solid;
+}
+
+#redGradientStopOffset {
+    stop-color: rgb(255, 0, 0);
+    stop-opacity: 1;
+
+}
+
+#greenGradientStopOffset {
+    stop-color: rgb(0, 255, 0);
+    stop-opacity: 1;
+}
+
+#polygonContainer svg line {
+    stroke: black;
+    stroke-width: 2px;
+}
