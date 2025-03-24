@@ -24,10 +24,10 @@ async function read() {
     let sum = 0;
     let max = 0;
 
-    let str = "<h3>Adatok lekérése</h3>";
+    let str = "";
     str += "<p>Rekordok száma: " + data.rowCount + "</p>";
-    str += "<p>Utolsó max " + data.maxNum + " records:</p>";
-    str += "<table><tr><th>id</th><th>\tname</th><th>height</th><th>weight</th><th>code</th></tr>";
+    str += "<p>Utolsó max " + data.maxNum + " rekord:</p>";
+    str += "<table><tr><th>id</th><th>Név</th><th>Magasság</th><th>Súly</th><th>code</th></tr>";
 
     for (let i = 0; i < list.length; i++) {
       let height = parseFloat(list[i].height);
@@ -206,10 +206,12 @@ async function deleteF() {
       body: "code=" + code + "&op=delete&id=" + id
     });
     let data = await response.text();
-    if (data > 0)
+    if (data > 0) {
       str = "Törlés sikeres";
-    else
+    }
+    else {
       str = "Törlés sikertelen!";
+    }
     document.getElementById("deleteResult").innerHTML = str;
     document.getElementById("idDel").value = "";
     read();
