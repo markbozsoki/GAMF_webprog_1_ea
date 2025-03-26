@@ -1,0 +1,26 @@
+#fizzBuzzCounter button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#fizzBuzzCounter div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    min-height: 200px;
+    margin-bottom: 30px;
+}
+
+#fizzBuzzCounter div label {
+    text-align: center;
+}
+
+#fizzBuzzInspector input {
+    max-width: 70px;
+    margin-bottom: 20px;
+}
+
+#fizzBuzzInspectorResult {
+    margin-left: 20px;
+}
