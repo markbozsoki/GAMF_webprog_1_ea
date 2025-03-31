@@ -6,12 +6,15 @@ table {
     table-layout: fixed;
 }
 
+table tbody tr {
+    cursor: pointer;
+}
+
 th,
 td {
     border: 1px solid black;
     padding: 10px;
     text-align: center;
-    cursor: pointer;
     width: 12, 5%;
 }
 
