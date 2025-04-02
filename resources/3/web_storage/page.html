@@ -48,8 +48,11 @@
         <article>
           <h2>Web Storage</h2>
           <ul>
-            <li>A megadott címzett csak az aktuálisan megnyitott oldalon kerül megjegyzésre.</li>
-            <li>A megírt üzenet több megnyitott oldalon is megmarad.</li>
+            <li>A megadott címzett az aktuálisan megnyitott oldalon kerül megjegyzésre.</li>
+            <li>
+              A megírt üzenet több megnyitott oldalon is törlésre kerül, ha bármely megnyitott oldalon törlés történik.
+            </li>
+            <li>Az oldal nem küld e-mailt senkinek, csupán imitálja a munkafolyamatot.</li>
           </ul>
         </article>
 
@@ -60,14 +63,14 @@
         </div>
 
         <div id="messageContainer">
-          <div id="dest">
+          <div id="destination">
             <label>Címzett:</label>
-            <input id="destination" type="email" placeholder="name@mail.com">
+            <input id="destinationInput" type="email" placeholder="name@mail.com">
           </div>
-          <textarea id="message" placeholder="Írjon egy üzenetet..." maxlength="3500"></textarea>
+          <textarea id="messageText" placeholder="Írjon egy üzenetet..." maxlength="3500"></textarea>
           <br>
-          <button id="send">Küldés</button>
-          <button id="clear">Törlés</button>
+          <button id="sendButton">Küldés</button>
+          <button id="clearButton">Törlés</button>
         </div>
 
       </section>

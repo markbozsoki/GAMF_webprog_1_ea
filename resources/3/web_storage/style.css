@@ -7,12 +7,12 @@
     width: 170px;
 }
 
-#messageContainer #dest,
-#messageContainer #message {
+#messageContainer #destination,
+#messageContainer #messageText {
     margin-bottom: 15px;
 }
 
-#messageContainer #message {
+#messageContainer #messageText {
     min-width: 350px;
     max-width: 750px;
     min-height: 200px;
