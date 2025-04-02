@@ -15,7 +15,8 @@ header {
 }
 
 #contentWrap {
-    padding-bottom: 2.5rem; /* footer height */
+    /* footer height */
+    padding-bottom: 2.5rem;
     margin-bottom: 25px;
 }
 
@@ -25,7 +26,6 @@ footer {
     position: absolute;
     width: 100%;
     bottom: 0;
-    margin-top: 25px;
     padding: 20px 0px 20px 0px;
     text-align: right;
 }
@@ -46,9 +46,53 @@ aside {
     padding: 1em;
 }
 
+aside ul {
+    width: 100%;
+    padding: 0;
+    margin-top: 25px;
+    list-style-type: none;
+}
+
+aside ul li {
+    width: 160px;
+    background-color: rgba(102, 205, 171, 0.306);
+    border-top: 1px solid white;
+}
+
+aside ul li a {
+    color: black;
+    text-decoration: none;
+    padding-top: 0.4em;
+    padding-right: 0.1em;
+    padding-bottom: 0.5em;
+    padding-left: 0.3em;
+    font-size: 85%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    
+}
+
+aside ul li:hover {
+    background-color: bisque;
+}
+
+aside ul li a.active {
+    font-weight: bold;
+}
+
 section {
+    margin-top: 25px;
     margin-left: 190px;
     padding: 15px;
+}
+
+section article {
+    margin: 40px 40px 10px 40px;
+}
+
+section article ul li {
+    padding: 4px;
 }
 
 nav ul {
@@ -59,7 +103,11 @@ nav ul {
     list-style-type: none;
 }
 
-nav a {
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
     float: left;
     width: 8em;
     text-decoration: none;
@@ -70,14 +118,10 @@ nav a {
     text-align: center;
 }
 
-nav a.active {
-    border-bottom: 5px solid black;
+nav ul li a.active {
+    font-weight: bold;
 }
 
-nav a:hover {
+nav ul li a:hover {
     background-color: bisque
-}
-
-nav ul li {
-    display: inline;
 }
