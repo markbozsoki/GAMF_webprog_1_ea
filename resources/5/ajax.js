@@ -223,3 +223,4 @@ async function deleteF() {
 window.onload = function () {
   read();
 }; 
+document.getElementById("readButton").addEventListener("click", read);
