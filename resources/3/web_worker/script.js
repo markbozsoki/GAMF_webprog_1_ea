@@ -1,3 +1,4 @@
+let fizz_buzz_counter_result = document.getElementById("fizzBuzzCounter").querySelector("div label");
 var fizz_buzz_worker = null;
 
 let start_fizz_buzz_counter_button = document.getElementById("startFizzBuzzCounter");
@@ -9,7 +10,17 @@ start_fizz_buzz_counter_button.addEventListener("click", () => {
     }
     else {
         console.log("Web Worker cannot be started");
+        return;
     }
+    fizz_buzz_worker.onmessage = function(event) {
+        let current_result = fizz_buzz_counter_result.innerHTML;
+        if (current_result == "") {
+            fizz_buzz_counter_result.innerHTML = event.data;
+        }
+        else {
+            fizz_buzz_counter_result.innerHTML = current_result + ", " + event.data;
+        }
+      };
 });
 
 let stop_fizz_buzz_counter_button = document.getElementById("stopFizzBuzzCounter");
