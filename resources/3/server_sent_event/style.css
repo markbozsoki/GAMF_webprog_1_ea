@@ -1,0 +1,11 @@
+#result {
+    margin-left: 40px;
+    min-height: 10em;
+    max-width: 50em;
+    border: 1px solid black;
+}
+
+section p {
+    margin-left: 40px;
+    margin-top: 15px;
+}

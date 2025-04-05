@@ -48,9 +48,26 @@
                 <article>
                     <h2>Web Workers</h2>
                     <ul>
-                      <li>placeholder</li>
+                        <li>A FizzBuzz játék indításához nyomja meg a "FizzBuzz indítása" gombot!</li>
+                        <li>Alul lekérheti egy megadott szám FizzBuzz értékét.</li>
+                        <li>Mi az a <a href="https://en.wikipedia.org/wiki/Fizz_buzz" target="_blank">FizzBuzz</a>?</li>
                     </ul>
-                  </article>
+                </article>
+
+                <div id="fizzBuzzCounter">
+                    <button id="startFizzBuzzCounter">FizzBuzz indítása</button>
+                    <button id="stopFizzBuzzCounter">Stop</button>
+                    <div>
+                        <label></label>
+                    </div>
+                </div>
+
+                <div id="fizzBuzzInspector">
+                    <label>Adjon meg egy számot:</label>
+                    <input type="number" min="1" value="1">
+                    <button>Fizz vagy Buzz?</button>
+                    <label id="fizzBuzzInspectorResult"></label>
+                </div>
 
             </section>
         </div>
@@ -58,6 +75,7 @@
         <footer><label>Óré Szabina Vivien VE22CS & Bozsóki Márk I6SUE5</label></footer>
     </div>
     <script src="script.js"></script>
+    <script scr="fizzbuzz_counter.js"></script>
 </body>
 
 </html>

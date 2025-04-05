@@ -48,9 +48,25 @@
                 <article>
                     <h2>Drag and Drop</h2>
                     <ul>
-                      <li>placeholder</li>
+                        <li>Húzza a helyes megfejtést a szürke válasz mezőbe!</li>
                     </ul>
-                  </article>
+                </article>
+
+                <div id="trivia">
+                    <label id="question">Ki nyerte meg 1988-ban a Formula 1 világbajnokságot?</label>
+
+                    <div id="selectedAnswer" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+
+                    <p>Válaszlehetőségek:</p>
+                    <div id="answers">
+                        <label class="answer" id="ans1" draggable="true" ondragstart="drag(event)">Niki&nbspLauda</label>
+                        <label class="answer" id="ans2" draggable="true" ondragstart="drag(event)">Carlos&nbspSainz</label>
+                        <label class="answer" id="ans3" draggable="true" ondragstart="drag(event)">Ayrton&nbspSenna</label>
+                        <label class="answer" id="ans4" draggable="true" ondragstart="drag(event)">Charles&nbspLeclerc</label>
+                    </div>
+                </div>
+
+                <button id="check">Ellenőrzés</button>
 
             </section>
         </div>

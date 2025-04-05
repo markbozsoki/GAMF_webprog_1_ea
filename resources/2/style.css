@@ -17,7 +17,8 @@ form div label.hide {
 }
 
 input[type=text],
-input[type=number] {
+input[type=number],
+input[type=email] {
     box-sizing: border-box; /* allows us to include the padding and border in an element's total width and height */
     width: 100%;
     padding: 8px 20px;
