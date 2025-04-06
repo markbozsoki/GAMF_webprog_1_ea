@@ -37,11 +37,45 @@
         <article>
           <h2>Leírás</h2>
           <ul>
-            <li>placeholder</li>
+            <li>
+              Válasszon ki egy tetszőleges alakzatot!
+            </li>
+            <li>
+              Adja meg az alakzatra jellemző parameter(ek) értékét!
+            </li>
+            <li>
+              A gombokra kattintással végezzen el műveleteket!
+            </li>
           </ul>
         </article>
 
-        
+        <div id="inputs">
+          <fieldset id="shapeSelector">
+            <legend>Alakzatok</legend>
+            <label><input type="radio" name="shape_type" value="circle" checked="checked">Kör</label>
+            <label><input type="radio" name="shape_type" value="square">Négyzet</label>
+            <label><input type="radio" name="shape_type" value="triangle">Háromszög</label>
+          </fieldset>
+
+          <fieldset id="args">
+            <legend>Paraméterek</legend>
+          </fieldset>
+
+          <div id="controls">
+            <button id="show">Megjelenítés</button>
+            <button id="area">Területszámítás</button>
+            <button id="perimeter">Kerületszámítás</button>
+          </div>
+        </div>
+
+        <div id="outputs">
+          <fieldset>
+            <legend>Eredmények</legend>
+            <label id="result"></label>
+          </fieldset>
+        </div>
+
+        <svg id="shapeContainer"></svg>
 
       </section>
 
