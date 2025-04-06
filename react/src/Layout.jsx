@@ -5,9 +5,7 @@ const Layout = () => {
       <h3>Válasszon egy REACT alkalmazást!</h3>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Vissza a főoldalra</Link>
-          </li>
+          
           <li>
             <Link to="/sudoku">Sudoku</Link>
           </li>
