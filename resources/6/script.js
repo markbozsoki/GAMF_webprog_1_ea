@@ -20,13 +20,16 @@ function updateParametersFieldset() {
 
     clearInputArgs();
     switch (selected_radio_button_value) {
-        case "circle":
+        case Circle.name:
             appendNumberInputNode("Adja meg a körátmérőt:", 1, 400);
             break;
-        case "square":
+        case Square.name:
             appendNumberInputNode("Adja meg a négyzet oldalhosszát:", 1, 400)
             break;
-        case "triangle":
+        case Rectangle.name:
+            appendNumberInputNode("Adja meg a téglalap oldalhosszát:", 1, 400)
+            break;
+        case Triangle.name:
             appendNumberInputNode("Adja meg a háromszög oldalhosszát:", 1, 400)
             break;
         default:
