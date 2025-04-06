@@ -1,7 +1,23 @@
 class Square extends Rectangle {
 
-    constructor (side_length) {
+    constructor(side_length) {
         super(side_length, side_length);
+    }
+
+    updateWithArgs(args) {
+        this.a_side_length = args[0];
+        this.b_side_length = args[0];
+    }
+
+    GetInputInstructions() {
+        return [
+            {
+                msg: "Adja meg a négyzet oldalhosszát:",
+                min: "default",
+                max: "default",
+                value: "default"
+            }
+        ]
     }
 
     CalculateArea() {

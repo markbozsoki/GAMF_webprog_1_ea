@@ -1,8 +1,13 @@
 class ShapeBaseClass {
-    #node;
-    
+    svg_namespace = "http://www.w3.org/2000/svg";
+
     constructor() {
-        this.#node = null;
+
+    }
+
+    GetInputInstructions() {
+        console.error(this.name + " does not have input instructions!");
+        return []
     }
 
     CalculateArea() {
@@ -14,7 +19,6 @@ class ShapeBaseClass {
     }
 
     GetAsSVGNode(width_offset, height_offset) {
-        this.#node;
         throw new Error("ERROR: GetAsSVGNode is not implemented yet!");
     }
 }
