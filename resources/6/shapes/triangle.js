@@ -21,8 +21,13 @@ class Triangle extends ShapeBaseClass {
         ]
     }
 
+    CalculateHeight(){
+        return (this.side_length * Math.sqrt(3)) / 2;
+    }
+
     CalculateArea() {
-        return Math.pow(this.side_length, 2) / 2;
+        let height = this.CalculateHeight();
+        return (this.side_length * height) / 2;
     }
 
     CalculatePerimeter() {
@@ -32,7 +37,7 @@ class Triangle extends ShapeBaseClass {
     GetAsSVGNode(width_offset, height_offset) {
         let node = document.createElementNS(this.svg_namespace ,"polygon");
 
-        let height = (this.side_length * Math.sqrt(3)) / 2;
+        let height = this.CalculateHeight();
         let half_height = (height / 2);
 
         let half_side_lenght = (this.side_length / 2);
