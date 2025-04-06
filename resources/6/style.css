@@ -7,10 +7,11 @@ section fieldset,
 
 #args label input {
     width: 70px;
+    margin-bottom: 5px;
 }
 
 #shapeContainer {
-    border: 1px solid black;
+    border: 1px solid gray;
     min-height: 450px;
     width: 450px;
     margin-left: 50px;

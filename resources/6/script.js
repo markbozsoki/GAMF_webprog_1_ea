@@ -1,4 +1,5 @@
 var selected_shape = null;
+const INPUT_ARGUMENT_DEFAULT_VALUE = 100
 
 let input_args = document.getElementById("args");
 let outputs = document.getElementById("outputs");
@@ -11,6 +12,8 @@ shape_selectors.forEach((radio_button) => {
 window.onload = updateParametersFieldset();
 
 function updateParametersFieldset() {
+    clearOutputs();
+    clearShapeContainer();
     let selected_radio_button_value = "";
     shape_selectors.forEach((radio_button) => {
         if (radio_button.checked) {
@@ -19,39 +22,54 @@ function updateParametersFieldset() {
     });
 
     clearInputArgs();
+    let min_input_value = 1;
     switch (selected_radio_button_value) {
         case Circle.name:
-            appendNumberInputNode("Adja meg a körátmérőt:", 1, 400);
+            selected_shape = new Circle(INPUT_ARGUMENT_DEFAULT_VALUE);
             break;
         case Square.name:
-            appendNumberInputNode("Adja meg a négyzet oldalhosszát:", 1, 400)
+            selected_shape = new Square(INPUT_ARGUMENT_DEFAULT_VALUE);
             break;
         case Rectangle.name:
-            appendNumberInputNode("Adja meg a téglalap oldalhosszát:", 1, 400)
+            selected_shape = new Rectangle(INPUT_ARGUMENT_DEFAULT_VALUE, INPUT_ARGUMENT_DEFAULT_VALUE / 2);
             break;
         case Triangle.name:
-            appendNumberInputNode("Adja meg a háromszög oldalhosszát:", 1, 400)
+            selected_shape = new Triangle(INPUT_ARGUMENT_DEFAULT_VALUE);
             break;
         default:
             console.error("No case with value of \"" + selected_radio_button_value + "\" from shape_selectors!");
             return;
     }
 
-    function appendNumberInputNode(instruction, min, max) {
+    selected_shape.GetInputInstructions().forEach((instruction) => {
+        let min = instruction.min;
+        if (min == "default")
+            min = min_input_value;
+
+        let max = instruction.max;
+        if (max == "default")
+            max = 400;
+
+        let value = instruction.value;
+        if (value == "default")
+            value = INPUT_ARGUMENT_DEFAULT_VALUE;
+
+        let message = instruction.msg;
+
         let new_number_input = document.createElement("input");
         new_number_input.type = "number";
         new_number_input.min = String(min);
         new_number_input.max = String(max);
-        new_number_input.value = new_number_input.min;
+        new_number_input.value = value;
         new_number_input.addEventListener("input", clearOutputs)
 
         let new_arg_label = document.createElement("label");
-        new_arg_label.innerHTML = instruction + " ";
+        new_arg_label.innerHTML = message + " ";
         new_arg_label.appendChild(new_number_input);
 
         input_args.appendChild(new_arg_label);
-        input_args.appendChild(document.createElement("br"))
-    }
+        input_args.appendChild(document.createElement("br"));
+    });
 }
 
 let show_button = document.getElementById("show");
@@ -59,20 +77,27 @@ show_button.addEventListener("click", () => {
     if (selected_shape == null)
         return;
 
-    shape_container.removeChild(shape_container.lastChild);
+    updateShapeObject();
+    let width_offset = shape_container.clientWidth / 2;
+    let height_offset = shape_container.clientHeight / 2;
     let new_shape_node = selected_shape.GetAsSVGNode(
-        shape_container.offsetWidth / 2,
-        shape_container.offsetHeight / 2,
+        width_offset,
+        height_offset
     );
     shape_container.appendChild(new_shape_node);
 });
+
+function clearShapeContainer() {
+    if (shape_container.innerHTML != "")
+        shape_container.removeChild(shape_container.lastChild);
+}
 
 let area_button = document.getElementById("area");
 area_button.addEventListener("click", () => {
     if (selected_shape == null)
         return;
 
-    updateShapeObject()
+    updateShapeObject();
     updateResults("Az alakzat területe: " + selected_shape.CalculateArea());
 });
 
@@ -81,13 +106,14 @@ perimeter_button.addEventListener("click", () => {
     if (selected_shape == null)
         return;
 
-    updateShapeObject()
+    updateShapeObject();
     updateResults("Az alakzat kerülete: " + selected_shape.CalculatePerimeter());
 });
 
 function updateShapeObject() {
     let args = [];
-    input_args.forEach((input) => {
+    inputs = input_args.querySelectorAll("label input");
+    inputs.forEach((input) => {
         args.push(input.value);
     });
     selected_shape.updateWithArgs(args);
