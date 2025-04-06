@@ -61,8 +61,8 @@ show_button.addEventListener("click", () => {
 
     shape_container.removeChild(shape_container.lastChild);
     let new_shape_node = selected_shape.GetAsSVGNode(
-        shape_container.offsetWidth,
-        shape_container.offsetHeight
+        shape_container.offsetWidth / 2,
+        shape_container.offsetHeight / 2,
     );
     shape_container.appendChild(new_shape_node);
 });

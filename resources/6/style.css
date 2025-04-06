@@ -5,6 +5,10 @@ section fieldset,
     margin: 10px 40px 10px 40px;
 }
 
+#args label input {
+    width: 70px;
+}
+
 #shapeContainer {
     border: 1px solid black;
     min-height: 450px;
@@ -13,6 +17,8 @@ section fieldset,
     margin-bottom: 30px;
 }
 
-#args label input {
-    width: 70px;
+#shapeContainer circle,
+#shapeContainer rect,
+#shapeContainer polygon {
+    fill: green;
 }
