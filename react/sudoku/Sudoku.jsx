@@ -3,15 +3,15 @@ import Board from './board';
 import './app.css';
 
 const initialBoard = [
-  [5, 3, null, null, 7, null, null, null, null],
-  [6, null, null, 1, 9, 5, null, null, null],
-  [null, 9, 8, null, null, null, null, 6, null],
-  [8, null, null, null, 6, null, null, null, 3],
-  [4, null, null, 8, null, 3, null, null, 1],
-  [7, null, null, null, 2, null, null, null, 6],
-  [null, 6, null, null, null, null, 2, 8, null],
-  [null, null, null, 4, 1, 9, null, null, 5],
-  [null, null, null, null, 8, null, null, 7, 9]
+  [2, 1, null, 3, null, 8, null, 4, null],
+  [null, null, null, null, null, null, null, 8, null],
+  [null, null, null, null, 7, null, 2, 1, 9],
+  [4, 2, null, null, 5, null, 3, null, null],
+  [3, null, 8, null, null, null, 6, null, 5],
+  [null, null, 9, null, 6, null, null, 2, 8],
+  [8, 9, 5, null, 3, null, null, null, null],
+  [null, 4, null, null, null, null, null, null, null],
+  [null, 3, null, 9, null, 4, null, 5, 7]
 ];
 
 const isValidSudoku = (board) => {
@@ -20,14 +20,12 @@ const isValidSudoku = (board) => {
     return new Set(nums).size === nums.length;
   };
 
-  // Ellenőrzi a sorokat és oszlopokat
   for (let i = 0; i < 9; i++) {
     const row = board[i];
     const col = board.map(row => row[i]);
     if (!isUnique(row) || !isUnique(col)) return false;
   }
 
-  // Ellenőrzi a 3x3-as blokkokat
   for (let row = 0; row < 9; row += 3) {
     for (let col = 0; col < 9; col += 3) {
       let box = [];
