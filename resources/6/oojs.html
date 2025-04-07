@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Web-programozás-1 Előadás Házi feladat</title>
+  <link type="text/css" rel="stylesheet" href="../main.css">
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="pageContainer">
+    <div id="contentWrap">
+
+      <header>
+        <h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Főoldal</a></li>
+          <li><a href="../2/tablazat.html">Táblázat</a></li>
+          <li><a href="../3/html5.html">HTML5</a></li>
+          <li><a href="../4/chartjs.html">ChartJS</a></li>
+          <li><a href="../5/ajax.html">AJAX</a></li>
+          <li><a href="oojs.html" class="active">OOJS</a></li>
+        </ul>
+      </nav>
+
+      <aside>
+        <h1>OOJS</h1>
+        <hr>
+        <h2>A 6. feladat megvalósítása</h2>
+      </aside>
+
+      <section>
+        <article>
+          <h2>Leírás</h2>
+          <ul>
+            <li>
+              Válasszon ki egy tetszőleges alakzatot!
+            </li>
+            <li>
+              Adja meg az alakzatra jellemző parameter(ek) értékét!
+            </li>
+            <li>
+              A gombokra kattintással végezzen el műveleteket!
+            </li>
+          </ul>
+        </article>
+
+        <div id="inputs">
+          <fieldset id="shapeSelector">
+            <legend>Alakzatok</legend>
+            <label><input type="radio" name="shape_type" value="Circle" checked="checked">Kör</label>
+            <label><input type="radio" name="shape_type" value="Square">Négyzet</label>
+            <label><input type="radio" name="shape_type" value="Rectangle">Téglalap</label>
+            <label><input type="radio" name="shape_type" value="Triangle">Háromszög</label>
+          </fieldset>
+
+          <fieldset id="args">
+            <legend>Paraméterek</legend>
+          </fieldset>
+
+          <div id="controls">
+            <button id="show">Megjelenítés</button>
+            <button id="area">Területszámítás</button>
+            <button id="perimeter">Kerületszámítás</button>
+          </div>
+        </div>
+
+        <fieldset id="outputs">
+          <legend>Eredmények</legend>
+          <label id="result"></label>
+        </fieldset>
+
+        <svg id="shapeContainer"></svg>
+
+      </section>
+
+    </div>
+    <footer><label>Óré Szabina Vivien VE22CS & Bozsóki Márk I6SUE5</label></footer>
+  </div>
+  <script src="shapes/base.js"></script>
+  <script src="shapes/circle.js"></script>
+  <script src="shapes/rectangle.js"></script>
+  <script src="shapes/square.js"></script>
+  <script src="shapes/triangle.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
