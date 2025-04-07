@@ -44,8 +44,15 @@ const Sudoku = () => {
   const [board, setBoard] = useState(initialBoard);
 
   const handleCellChange = (row, col, value) => {
+    const num = parseInt(value);
+
+
+    if (!Number.isInteger(num) || num < 1 || num > 9) {
+      return;
+    }
+
     const newBoard = board.map((r, rIdx) =>
-      r.map((cell, cIdx) => (rIdx === row && cIdx === col ? parseInt(value) || 0 : cell))
+      r.map((cell, cIdx) => (rIdx === row && cIdx === col ? num : cell))
     );
     setBoard(newBoard);
   };
