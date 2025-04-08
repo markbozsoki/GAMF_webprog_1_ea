@@ -9,8 +9,18 @@ const Board = ({ board, onCellChange }) => {
           {row.map((cell, colIndex) => (
             <Cell
               key={colIndex}
-              value={cell}
-              onChange={(e) => onCellChange(rowIndex, colIndex, e.target.value)}
+              value={cell === null ? '' : cell}
+              onChange={(e) => {
+                const val = e.target.value;
+
+                if (val === '') {
+                  onCellChange(rowIndex, colIndex, null);
+                }
+                else if (/^[1-9]$/.test(val)) {
+                  onCellChange(rowIndex, colIndex, val);
+                }
+              }}
+              maxLength={1}
             />
           ))}
         </div>
