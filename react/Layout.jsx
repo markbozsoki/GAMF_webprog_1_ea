@@ -10,7 +10,7 @@ const Layout = () => {
             <Link to="/sudoku">Sudoku</Link>
           </li>
           <li>
-            
+          <Link to="/">Vissza</Link>
           </li>
         </ul>
       </nav>
