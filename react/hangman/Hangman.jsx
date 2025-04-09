@@ -4,7 +4,7 @@ import "./app.css"; // Import the additional CSS file
 
 const words = ["KOMPONENS", "EGYETEM", "NEUMANN", "PROFESSZOR"];
 
-const HangmanGame = () => {
+const Hangman = () => {
     const [word, setWord] = useState("");
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [mistakes, setMistakes] = useState(0);
@@ -83,4 +83,4 @@ const HangmanGame = () => {
     );
 };
 
-export default HangmanGame;
+export default Hangman;

@@ -8,6 +8,8 @@ const Layout = () => {
           
           <li>
             <Link to="/sudoku">Sudoku</Link>
+          </li><li>
+            <Link to="/hangman">Akasztófa</Link>
           </li>
           <li>
           <Link to="/">Vissza</Link>
