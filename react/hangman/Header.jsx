@@ -6,6 +6,7 @@ const Header = () => {
         <>
             <h1>Akasztófa</h1>
             <p>Találja ki a szót a billentyűzetről beírt betűkkel!</p>
+            <p>Ne használjon ékezetes betűket, nincs ilyen feladvány!</p>
         </>
     )
 }

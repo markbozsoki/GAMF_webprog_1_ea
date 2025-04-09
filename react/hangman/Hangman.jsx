@@ -45,8 +45,6 @@ function Hangman() {
 
     function playAgain() {
         setPlayable(true);
-
-        // Empty Arrays
         setCorrectLetters([]);
         setWrongLetters([]);
 
