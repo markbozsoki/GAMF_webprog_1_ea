@@ -9,8 +9,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="sudoku" element={<Sudoku />} />
-          <Route path="hangman" element={<Hangman />} />
+          <Route path="react.html/sudoku" element={<Sudoku />} />
+          <Route path="react.html/hangman" element={<Hangman />} />
           <Route path="*" element={<Entry />} />
         </Route>
       </Routes>
