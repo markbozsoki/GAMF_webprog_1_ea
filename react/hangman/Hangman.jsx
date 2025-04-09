@@ -1,86 +1,71 @@
-import React, { useState, useEffect } from "react";
-import Canvas from "./Canvas";
-import "./app.css"; // Import the additional CSS file
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import Figure from './Figure';
+import WrongLetters from './WrongLetters';
+import Word from './Word';
+import Popup from './Popup';
+import Notification from './Notification';
+import { showNotification as show, checkWin } from './Checker';
 
-const words = ["KOMPONENS", "EGYETEM", "NEUMANN", "PROFESSZOR"];
+import './App.css';
 
-const Hangman = () => {
-    const [word, setWord] = useState("");
-    const [guessedLetters, setGuessedLetters] = useState([]);
-    const [mistakes, setMistakes] = useState(0);
+const words = ['egyetem', 'react', 'neumann', 'professzor'];
+let selectedWord = words[Math.floor(Math.random() * words.length)];
+
+function Hangman() {
+    const [playable, setPlayable] = useState(true);
+    const [correctLetters, setCorrectLetters] = useState([]);
+    const [wrongLetters, setWrongLetters] = useState([]);
+    const [showNotification, setShowNotification] = useState(false);
 
     useEffect(() => {
-        resetGame();
-    }, []);
-
-    const chooseRandomWord = () => {
-        const randomIndex = Math.floor(Math.random() * words.length);
-        return words[randomIndex].toUpperCase();
-    };
-
-    const handleGuess = (letter) => {
-        if (!guessedLetters.includes(letter)) {
-            setGuessedLetters([...guessedLetters, letter]);
-            if (!word.includes(letter)) {
-                setMistakes(mistakes + 1);
+        const handleKeydown = event => {
+            const { key, keyCode } = event;
+            if (playable && keyCode >= 65 && keyCode <= 90) {
+                const letter = key.toLowerCase();
+                if (selectedWord.includes(letter)) {
+                    if (!correctLetters.includes(letter)) {
+                        setCorrectLetters(currentLetters => [...currentLetters, letter]);
+                    } else {
+                        show(setShowNotification);
+                    }
+                } else {
+                    if (!wrongLetters.includes(letter)) {
+                        setWrongLetters(currentLetters => [...currentLetters, letter]);
+                    } else {
+                        show(setShowNotification);
+                    }
+                }
             }
         }
-    };
+        window.addEventListener('keydown', handleKeydown);
 
-    const isGameWon = () => {
-        return word
-            .split("")
-            .every((letter) => guessedLetters.includes(letter));
-    };
+        return () => window.removeEventListener('keydown', handleKeydown);
+    }, [correctLetters, wrongLetters, playable]);
 
-    const isGameLost = () => {
-        return mistakes >= 6;
-    };
+    function playAgain() {
+        setPlayable(true);
 
-    const resetGame = () => {
-        setWord(chooseRandomWord());
-        setGuessedLetters([]);
-        setMistakes(0);
-    };
+        // Empty Arrays
+        setCorrectLetters([]);
+        setWrongLetters([]);
+
+        const random = Math.floor(Math.random() * words.length);
+        selectedWord = words[random];
+    }
 
     return (
-        <div className="hangman-container">
-            <h1>Akasztófa</h1>
-            <h5>
-            Találja ki a szót, mielőtt megrajzolódik az akasztófa! 
-            </h5>
-            <Canvas mistakes={mistakes} />
-            <div className="word-display">
-                {word.split("").map((letter, index) => (
-                    <span key={index} className="letter">
-                        {guessedLetters.includes(letter) ? letter : "_"}
-                    </span>
-                ))}
+        <>
+            <Header />
+            <div className="game-container">
+                <Figure wrongLetters={wrongLetters} />
+                <WrongLetters wrongLetters={wrongLetters} />
+                <Word selectedWord={selectedWord} correctLetters={correctLetters} />
             </div>
-            <div className="keyboard">
-                {Array.from(Array(26)).map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() =>
-                            handleGuess(String.fromCharCode(65 + index))
-                        }
-                        disabled={guessedLetters.includes(
-                            String.fromCharCode(65 + index)
-                        )}
-                    >
-                        {String.fromCharCode(65 + index)}
-                    </button>
-                ))}
-            </div>
-            {isGameWon() && <p className="result-message">Ön nyert!</p>}
-            {isGameLost() && (
-                <p className="result-message">sajnos veszített! A helyes megfejtés: {word}</p>
-            )}
-            <button className="new-game-button" onClick={resetGame}>
-                Új Játék
-            </button>
-        </div>
+            <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
+            <Notification showNotification={showNotification} />
+        </>
     );
-};
+}
 
 export default Hangman;
