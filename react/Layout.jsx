@@ -7,12 +7,9 @@ const Layout = () => {
         <ul>
           
           <li>
-            <Link to="/sudoku">Sudoku</Link>
+            <Link to="/react.html/sudoku">Sudoku</Link>
           </li><li>
-            <Link to="/hangman">Akasztófa</Link>
-          </li>
-          <li>
-          <Link to="/">Vissza</Link>
+            <Link to="/react.html/hangman">Akasztófa</Link>
           </li>
         </ul>
       </nav>
